@@ -1,0 +1,28 @@
+{
+  "name": "bower",
+  "dependencies": {
+    "fastclick": "~1",
+    "imagesloaded": "~3",
+    "jquery": "~2",
+    "normalize-css": "~3",
+    "pure": "~0",
+    "isotope": "~2",
+    "jquery-infinite-scroll": "~2"
+  },
+  "exportsOverride": {
+    "pure": {
+      "": [
+        "grids.css"
+      ]
+    },
+    "imagesloaded": {
+      "": "imagesloaded.pkgd.js"
+    },
+    "isotope": {
+      "": "dist/isotope.pkgd.js"
+    },
+    "jquery": {
+      "": "dist/jquery.js"
+    }
+  }
+}

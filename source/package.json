@@ -1,0 +1,45 @@
+{
+  "title": "Infinitope!",
+  "name": "it",
+  "description": "Infinite scroll + Isotope v2",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mhulse/infinitope",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mhulse/infinitope.git"
+  },
+  "author": {
+    "name": "Micky Hulse",
+    "url": "http://mky.io"
+  },
+  "//": "The following FQDN is the endpoint for your assets (no trailing slash):",
+  "production": "http://mhulse.github.io/infinitope/prod",
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0",
+    "grunt-cli": "~0",
+    "grunt-bower-task": "~0",
+    "grunt-contrib-clean": "~0",
+    "grunt-contrib-concat": "~0",
+    "grunt-contrib-copy": "~0",
+    "grunt-contrib-jshint": "~0",
+    "grunt-contrib-sass": "~0",
+    "grunt-contrib-uglify": "~0",
+    "grunt-contrib-watch": "~0",
+    "grunt-env": "~0",
+    "grunt-preprocess": "~4",
+    "grunt-pure-grids": "~1",
+    "grunt-shell": "~0"
+  },
+  "scripts": {
+    "dev": "grunt",
+    "prod": "grunt prod",
+    "watch": "grunt watch",
+    "plugins": "grunt plugins"
+  }
+}

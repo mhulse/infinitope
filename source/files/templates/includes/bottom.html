@@ -1,0 +1,25 @@
+	</div> <!-- /#container -->
+	
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	
+	<script src="./scripts/fastclick.js"></script>
+	<script src="./scripts/jquery.js"></script>
+	<script src="./scripts/jquery.infinitescroll.js"></script>
+	<script src="./scripts/imagesloaded.pkgd.js"></script>
+	<script src="./scripts/isotope.pkgd.js"></script>
+	<script src="./scripts/isotope.overrides.js"></script>
+	<script src="./scripts/<!-- @echo name -->.js"></script>
+	<script src="./scripts/<!-- @echo name -->.mod.fastclick.js"></script>
+	<script src="./scripts/<!-- @echo name -->.mod.isotope.js"></script>
+	<script src="./scripts/<!-- @echo name -->.init.js"></script>
+	
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	
+	<script src="<!-- @echo production -->/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/scripts/<!-- @echo name -->.min.js"></script>
+	
+	<!-- @endif -->
+	
+</body>
+</html>

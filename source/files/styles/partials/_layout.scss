@@ -1,0 +1,42 @@
+#container {
+	margin: 0 auto;
+	max-width: 1280px;
+	min-width: 150px;
+}
+/*
+#container [class *= "pure-u"] { padding: 1em 0; }
+*/
+
+.isotope { *zoom: 1; } .isotope::before, .isotope::after { content: " "; display: table; } .isotope::after { clear: both; }
+.isotope { margin: 0 auto; }
+.isotope_item {
+	width: 140px;
+	height: 140px;
+	float: left;
+	border: 10px solid rgba(0, 0, 0, 0);
+}
+.js .isotope_item { opacity: 0; }
+.isotope_item a:active,
+.isotope_item a:focus {
+	color: rgba(0, 0, 0, 0);
+	text-decoration: none;
+	outline: 0;
+	border: 0;
+}
+
+/*
+@media all and (min-width: 1024px) {
+	.bar { *zoom: 1; } .bar::before, .bar::after { content: " "; display: table; } .bar::after { clear: both; }
+	.foo .bar { margin-left: 210px; }
+	.foo .baz {
+		float: right;
+		width: 100%;
+	}
+	.foo .qux {
+		width: 160px;
+		margin-left: -210px;
+		*margin-right: 50px; // For some reason, this makes IE6 look like other browsers.
+		float: left;
+	}
+}
+*/

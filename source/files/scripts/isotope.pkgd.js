@@ -1,0 +1,1 @@
+../plugins/isotope/isotope.pkgd.js

@@ -1,0 +1,76 @@
+figure {
+	
+	margin: 25px 0;
+	padding: 0;
+	
+	figcaption { margin-top: 10px; }
+	
+}
+
+img {
+	
+	border: 0;
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+	
+	a & {
+		border: 0;
+		outline: 0;
+	}
+	
+}
+
+iframe { border: 0; }
+
+iframe,
+object,
+embed {
+	max-width: 100%;
+	outline: 0;
+}
+
+audio,
+video {
+	
+	vertical-align: middle;
+	display: block;
+	
+	&:focus,
+	&:active { outline: 0; }
+	
+}
+
+audio {
+	width: 100%;
+	margin: 20px 0;
+}
+
+.mm {
+	
+	height: 0;
+	padding-bottom: 56.25%; // 16:9 = (9 / 16 = .5625) x 100
+	position: relative;
+	overflow: hidden;
+	margin: 10px 0;
+	
+	iframe,
+	object,
+	embed,
+	video {
+		border: 0;
+		width: 100% !important;
+		height: 100% !important;
+		max-width: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	&.theatre { padding-bottom: 59.171597633136%; } // 1.69:1 = (1 / 1.69 = .59171597633136) x 100
+	
+	&.slide { padding-bottom: 66.666666666667%; } // 3:2 = (2 / 3 = .66666666666667) x 100
+	
+	&.tv { padding-bottom: 75%; } // 4:3 = (3 / 4 = .75) x 100
+	
+}
