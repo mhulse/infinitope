@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-touch no-js" lang="en" dir="ltr">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<script>/*! https://gist.github.com/mhulse/4704893 */!function(e,n,o){("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch||o.MaxTouchPoints>0||o.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch")),n.documentElement.className=n.documentElement.className.replace(/\bno-js\b/,"js")}(window,document,navigator);</script>
+	
+	<title></title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<link rel="stylesheet" href="../assets/styles/infinite.css">
+	
+</head>
+<body>
+
+<div id="container">
+	<div id="isotope">
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+		<div class="isotope_item">
+			<p>Page 1</p>
+		</div>
+	</div>
+	<a id="next" href="page2.html">next page?</a>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../assets/scripts/jquery.infinitescroll.js"></script>
+<script src="../assets/scripts/imagesloaded.pkgd.js"></script>
+<script src="../assets/scripts/isotope.pkgd.js"></script>
+
+<script>
+	
+	/**
+	 * @see http://paulirish.github.io/infinite-scroll/test/
+	 * @see http://isotope.metafizzy.co/v1/demos/infinite-scroll.html
+	 * @see http://blog.lingohub.com/developers/2013/09/endless-pages-scrolling-masonry/
+	 */
+	
+	$(function() {
+		
+		// Cache isotope DOM element:
+		var $isotope = $('#isotope')
+			
+			// Instantiate isotope:
+			.isotope({ // http://isotope.metafizzy.co/
+				itemSelector:       '.isotope_item', // http://isotope.metafizzy.co/options.html#itemselector
+				transitionDuration: '.5s',           // http://isotope.metafizzy.co/options.html#transitionduration
+				layoutMode:         'fitRows'        // http://isotope.metafizzy.co/options.html#layoutmode
+			})
+			
+			// Instantiate infinitescroll:
+			.infinitescroll( // http://www.infinite-scroll.com/
+				{
+					navSelector:  '#next:last',             // Selector for the paged navigation (it will be hidden).
+					nextSelector: 'a#next:last',            // Selector for the NEXT link (to page 2).
+					itemSelector: '#isotope .isotope_item', // Selector for all items you'll retrieve.
+					debug:        true,                     // Enable debug messaging (to console.log).
+					dataType:     'html',                   // Undocumented.
+					path:         function(index) { return "page" + index + ".html"; }, // Undocumented.
+					loading: { // Undocumented.
+						finishedMsg: 'No more pages to load.',
+						img:         '../assets/images/loader.gif',
+						speed:       'slow'
+					}
+				},
+				// Infinitescroll callback function:
+				function(newElements, data, url) {
+					
+					// https://github.com/paulirish/infinite-scroll#loading-json-data
+					// Do something with JSON data, create DOM elements, etc. ...
+					
+					// Cache ajax elements:
+					var $newElements = $(newElements);
+					
+					// Pause the infinitescroll during load:
+					$isotope.infinitescroll('pause');
+					
+					// Instantiate imagesloaded for ajaxed elements:
+					$newElements.imagesLoaded(function() {
+						
+						$isotope
+							//.append($newElements) // Needed?
+							// http://isotope.metafizzy.co/methods.html#appended
+							// Add and lay out newly appended elements:
+							.isotope('appended', $newElements);
+							// Use this only if I find problems when cross-browser testing:
+							// https://github.com/metafizzy/isotope/issues/76
+							//.isotope('layout'); // http://isotope.metafizzy.co/methods.html
+						
+					});
+					
+				}
+			)
+			
+			// Apply imagesloaded:
+			.imagesLoaded(function() {
+				
+				// https://github.com/metafizzy/isotope/issues/444
+				$isotope.isotope('layout'); // http://isotope.metafizzy.co/methods.html#layout
+				
+			});
+		
+		// Listen for isotope's layoutcomplete callback.
+		// http://isotope.metafizzy.co/events.html#layoutcomplete
+		$isotope
+			
+			// Pause infinite scroll and let imagesloaded work it's magic:
+			.infinitescroll('pause')
+			
+			.isotope('on', 'layoutComplete', function(isoInstance, laidOutItems) {
+				
+				// What just happened?
+				console.log('Isotope layout completed on', laidOutItems.length, 'items');
+				
+				// Un-pause infinite scroll (we're assuming it's been paused):
+				$isotope.infinitescroll('resume');
+				
+			}); // DONE!!!!! :)
+		
+	});
+	
+</script>
+
+</body>
+</html>
