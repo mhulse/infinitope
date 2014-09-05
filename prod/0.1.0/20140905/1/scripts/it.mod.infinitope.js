@@ -54,7 +54,7 @@ IT.register(function() {
 			
 			// Might as well insert this using JS as I don't want google indexing:
 			var $next = $('<a />', {
-				id: 'next',
+				id: 'infscr-next',
 				//href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
 				href: 'pages/page2.json',
 				text: 'Next page?'
@@ -82,7 +82,7 @@ IT.register(function() {
 					//debug: true, // Enable debug messaging (to console.log).
 					dataType: 'json',
 					appendCallback: false, // Needed if `json` data type.
-					loading: { // Undocumented.
+					loading: { // Undocumented. HTML ID: `#infscr-loading`.
 						msgText: 'Wait',
 						finishedMsg: 'End',
 						img: 'images/loader2.gif',
@@ -174,7 +174,7 @@ IT.register(function() {
 		};
 		
 		// START!!!!! :)
-		$('<div />', { id: 'loading' }) // Let people know there's stuff coming.
+		$('<div />', { id: 'isotope-loading' }) // Let people know there's stuff coming.
 			.insertBefore($isotope) // Put it at the top.
 			.fadeIn('slow', _init); // Show it and start program.
 		

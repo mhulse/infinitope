@@ -1512,7 +1512,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-family: Arial, sans-serif;
-  color: #666;
+  color: #999;
   background: #fff;
   min-height: 100%;
   text-rendering: optimizeLegibility;
@@ -1523,7 +1523,7 @@ a {
   transition: color 250ms linear;
 }
 a, a:visited {
-  color: #bbb;
+  color: #000;
   text-decoration: none;
 }
 .no-touch a:visited:hover, a:focus, .no-touch a:focus:hover, .no-touch a:hover, a:active {
@@ -1567,6 +1567,12 @@ a, a:visited {
   }
 }
 
+header[role="banner"] {
+  padding: 0 10px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
 #isotope {
   *zoom: 1;
 }
@@ -1578,7 +1584,7 @@ a, a:visited {
   clear: both;
 }
 #isotope .isotope_item {
-  background: #ccc;
+  background: #ddd;
   width: 300px;
   height: 300px;
   padding: 10px;
