@@ -258,7 +258,6 @@ module.exports = function(grunt) {
 						'./files/scripts/jquery.*.js',
 						'./files/scripts/imagesloaded.pkgd.js',
 						'./files/scripts/isotope.pkgd.js',
-						'./files/scripts/isotope.overrides.js',
 						'./files/scripts/<%= pkg.name %>.js',
 						'./files/scripts/<%= pkg.name %>.mod.*.js',
 						'./files/scripts/<%= pkg.name %>.init.js',
@@ -318,8 +317,9 @@ module.exports = function(grunt) {
 			
 			options : {
 				
+				noCache : true, // Don't cache to sassc files.
 				precision : 14, // How many digits of precision to use when outputting decimal numbers.
-				noCache: true,  // Don't cache to sassc files.
+				sourcemap : 'none', // Generate CSS source maps?
 				
 			},
 			
@@ -394,7 +394,7 @@ module.exports = function(grunt) {
 				expand : true,
 				cwd : './files/templates/',
 				src : [
-					'**/*.html',
+					'**/*.*', // Greedy!
 					'!latest.html',
 				],
 				dest : '../dev/',
@@ -406,7 +406,7 @@ module.exports = function(grunt) {
 				expand : true,
 				cwd : './files/templates/',
 				src : [
-					'**/*.html',
+					'**/*.*', // IBID.
 					'!latest.html',
 				],
 				dest : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
@@ -439,7 +439,7 @@ module.exports = function(grunt) {
 				cwd : './files/',
 				src : [
 					'images/**/*',
-					'media/**/*',
+					'pages/**/*',
 					'scripts/**/*',
 				],
 				dest : '../dev/',
@@ -452,7 +452,7 @@ module.exports = function(grunt) {
 				cwd : './files/',
 				src : [
 					'images/**/*',
-					'media/**/*',
+					'pages/**/*',
 					'scripts/**/*',
 				],
 				dest : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',

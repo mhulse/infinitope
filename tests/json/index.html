@@ -36,7 +36,7 @@
 	
 	$(function() {
 		
-		var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?callback=?';
+		//var FQDN = 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?callback=?';
 		
 		// Cache isotope DOM element:
 		var $isotope = $('#isotope')
@@ -79,7 +79,8 @@
 			// Might as well insert this using JS as I don't want google indexing:
 			var $next = $('<a />', {
 				id: 'next',
-				href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
+				//href: 'http://registerguard.com/csp/cms/sites/rg/demos/home/page.csp?page=2',
+				href: 'page2.json',
 				text: 'Next page?'
 			});
 			
@@ -95,14 +96,14 @@
 					
 					path: function(index) {
 						// Use this for local testing:
-						//return 'page' + index + '.json'; // https://github.com/paulirish/infinite-scroll/pull/171
+						return 'page' + index + '.json'; // https://github.com/paulirish/infinite-scroll/pull/171
 						// Can be JSONP API endpoint:
-						return FQDN + '&page=' + index;
+						//return FQDN + '&page=' + index;
 					},
 					navSelector: $next,
 					nextSelector: $next,
 					itemSelector: '#isotope .isotope_item', // Selector for all items you'll retrieve.
-					debug: true, // Enable debug messaging (to console.log).=
+					//debug: true, // Enable debug messaging (to console.log).
 					dataType: 'json',
 					appendCallback: false, // Needed if `json` data type.
 					loading: { // Undocumented.
@@ -145,7 +146,7 @@
 			$isotope.isotope('on', 'layoutComplete', function(isoInstance, laidOutItems) {
 				
 				// What just happened?
-				console.log('Isotope layout completed on', laidOutItems.length, 'items');
+				//console.log('Isotope layout completed on', laidOutItems.length, 'items');
 				
 				// Un-pause infinite scroll (we're assuming it's been paused):
 				$isotope.infinitescroll('resume');
@@ -162,12 +163,12 @@
 			
 			// Load page 1 content ...
 			// Use for local testing:
-			//$.getJSON('page1.json')
+			$.getJSON('page1.json')
 			// Can be JSONP API endpoint:
-			$.getJSON(FQDN, {
-				page: 1,
-				format: 'json' // Pass whatever here.
-			})
+			//$.getJSON(FQDN, {
+			//	page: 1,
+			//	format: 'json' // Pass whatever here.
+			//})
 				.done(function(json) {
 					
 					// Cache json elements:
@@ -197,7 +198,7 @@
 		};
 		
 		// START!!!!! :)
-		var $loading = $('<div />', { id: 'loading' }) // Let people know there's stuff coming.
+		$('<div />', { id: 'loading' }) // Let people know there's stuff coming.
 			.insertBefore($isotope) // Put it at the top.
 			.fadeIn('slow', _init); // Show it and start program.
 		

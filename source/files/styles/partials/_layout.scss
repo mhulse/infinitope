@@ -1,42 +1,75 @@
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
 #container {
+	max-width: 1200px;
+	min-width: 300px;
 	margin: 0 auto;
-	max-width: 1280px;
-	min-width: 150px;
+	margin-bottom: 250px;
 }
-/*
-#container [class *= "pure-u"] { padding: 1em 0; }
-*/
 
-.isotope { *zoom: 1; } .isotope::before, .isotope::after { content: " "; display: table; } .isotope::after { clear: both; }
-.isotope { margin: 0 auto; }
+#isotope { *zoom: 1; } .isotope::before, .isotope::after { content: " "; display: table; } .isotope::after { clear: both; }
+#isotope { margin: 0 auto; }
 .isotope_item {
-	width: 140px;
-	height: 140px;
+	border: 1px solid black;
+	background: #ccc;
+	width: 300px;
+	height: 300px;
+	padding: 10px;
+	margin-right: -1px;
+	margin-bottom: -1px;
 	float: left;
-	border: 10px solid rgba(0, 0, 0, 0);
-}
-.js .isotope_item { opacity: 0; }
-.isotope_item a:active,
-.isotope_item a:focus {
-	color: rgba(0, 0, 0, 0);
-	text-decoration: none;
-	outline: 0;
-	border: 0;
 }
 
-/*
-@media all and (min-width: 1024px) {
-	.bar { *zoom: 1; } .bar::before, .bar::after { content: " "; display: table; } .bar::after { clear: both; }
-	.foo .bar { margin-left: 210px; }
-	.foo .baz {
-		float: right;
-		width: 100%;
-	}
-	.foo .qux {
-		width: 160px;
-		margin-left: -210px;
-		*margin-right: 50px; // For some reason, this makes IE6 look like other browsers.
-		float: left;
-	}
+.js #next {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
-*/
+
+/**** Infinite Scroll ****/
+#infscr-loading {
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+	line-height: 1;
+	position: fixed;
+	text-align: center;
+	z-index: 100;
+	width: 70px;
+	background: #000;
+	padding: 10px;
+	color: #fff;
+	border-radius: 5px;
+	bottom: 10px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+#infscr-loading img {
+	width: 50px;
+	height: auto;
+	border: 0;
+	margin: 0 0 10px;
+	max-width: none;
+	display: block;
+}
+
+#loading {
+	display: none;
+	height: 50px;
+	background: url(../images/loader1.gif) no-repeat center top;
+	background-size: 50px;
+}
