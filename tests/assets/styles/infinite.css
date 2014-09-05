@@ -7,7 +7,6 @@
 }
 
 #container {
-	border: 1px solid red;
 	max-width: 1200px;
 	min-width: 300px;
 	margin: 0 auto;
@@ -40,19 +39,41 @@
 
 /**** Infinite Scroll ****/
 #infscr-loading {
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+	line-height: 1;
 	position: fixed;
 	text-align: center;
 	z-index: 100;
-	background: rgba(0, 0, 0, .5);
-	padding: 20px;
+	width: 70px;
+	background: #000;
+	padding: 10px;
 	color: #fff;
-	-webkit-border-radius: 10px;
-	   -moz-border-radius: 10px;
-	        border-radius: 10px;
-	border: 1px solid red;
+	border-radius: 5px;
 	bottom: 10px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
 	        transform: translateX(-50%);
 }
+#infscr-loading img {
+	width: 50px;
+	height: auto;
+	border: 0;
+	margin: 0 0 10px;
+	max-width: none;
+	display: block;
+}
+
+#loading {
+	display: none;
+	height: 50px;
+	background: url(../images/loader1.gif) no-repeat center top;
+	background-size: 50px;
+}
+
+/********* DEMO ONLY: */
+
+h1 { text-align: center; }

@@ -17,6 +17,7 @@
 <body>
 
 <div id="container">
+	<h1>Lorem ipsum</h1>
 	<div id="isotope"></div>
 </div>
 
@@ -50,18 +51,15 @@
 		var _parse = function(json) {
 			
 			// Hoist, declare & initialize:
-			var data = json.results;
-			var items = data.length;
 			var html = '';
-			var i;
 			
 			// Iterate over json results:
-			for (i = 0; i < items; i++) {
+			$.each(json.results, function(i, item) {
 				
 				// Create string of HTML:
-				html += _render(data[i]); // Just a string.
+				html += _render(item); // Just a string.
 				
-			}
+			});
 			
 			// Send HTML string back to caller:
 			return html;
@@ -101,16 +99,17 @@
 						// Can be JSONP API endpoint:
 						return FQDN + '&page=' + index;
 					},
-					navSelector : $next,
-					nextSelector : $next,
+					navSelector: $next,
+					nextSelector: $next,
 					itemSelector: '#isotope .isotope_item', // Selector for all items you'll retrieve.
-					debug:        true,                     // Enable debug messaging (to console.log).=
-					dataType:     'json',
+					debug: true, // Enable debug messaging (to console.log).=
+					dataType: 'json',
 					appendCallback: false, // Needed if `json` data type.
 					loading: { // Undocumented.
-						finishedMsg: 'No more pages to load.',
-						img:         '../assets/images/loader.gif',
-						speed:       'slow'
+						msgText: 'Wait',
+						finishedMsg: 'End',
+						img: '../assets/images/loader2.gif',
+						speed: 0 // https://github.com/paulirish/infinite-scroll/issues/455#issuecomment-54584558
 					}
 				},
 				// Infinitescroll callback function:
@@ -155,30 +154,52 @@
 			
 		}; // _infinite
 		
+		// Get initial JSON data:
+		var _init = function() {
+			
+			// The initial loading div:
+			var $loading = $(this);
+			
+			// Load page 1 content ...
+			// Use for local testing:
+			//$.getJSON('page1.json')
+			// Can be JSONP API endpoint:
+			$.getJSON(FQDN, {
+				page: 1,
+				format: 'json' // Pass whatever here.
+			})
+				.done(function(json) {
+					
+					// Cache json elements:
+					var $newElements = $(_parse(json));
+					
+					//console.log($newElements);
+					
+					// Instantiate imagesloaded for ajaxed elements:
+					$newElements.imagesLoaded(function() {
+						
+						// Fade out the initial loading div:
+						$loading.fadeOut('slow', function() {
+							
+							// Add new isotope elements to DOM:
+							$isotope
+								.append($newElements)
+								.isotope('appended', $newElements);
+							
+							_infinite(); // Setup infinitescroll.
+							
+						});
+						
+					});
+					
+				}); // $.getJSON().done()
+			
+		};
+		
 		// START!!!!! :)
-		// Load page 1 content ...
-		// Use for local testing:
-		//$.getJSON('page1.json', function(json) {
-		// Can be JSONP API endpoint:
-		$.getJSON(FQDN + '&page=1', function(json) {
-			
-			// Cache json elements:
-			var $newElements = $(_parse(json));
-			
-			console.log($newElements);
-			
-			// Instantiate imagesloaded for ajaxed elements:
-			$newElements.imagesLoaded(function() {
-				
-				$isotope
-					.append($newElements)
-					.isotope('appended', $newElements);
-				
-				_infinite(); // Setup infinitescroll.
-				
-			});
-			
-		}); // $.getJSON()
+		var $loading = $('<div />', { id: 'loading' }) // Let people know there's stuff coming.
+			.insertBefore($isotope) // Put it at the top.
+			.fadeIn('slow', _init); // Show it and start program.
 		
 	});
 	
