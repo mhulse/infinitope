@@ -8,21 +8,13 @@
 	
 	<script>/*! https://gist.github.com/mhulse/4704893 */!function(e,n,o){("ontouchstart"in e||e.DocumentTouch&&n instanceof DocumentTouch||o.MaxTouchPoints>0||o.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch")),n.documentElement.className=n.documentElement.className.replace(/\bno-js\b/,"js")}(window,document,navigator);</script>
 	
-	<title><!--@echo title--> | v<!--@echo version--> | <!--@echo NODE_ENV--></title>
-	<meta name="description" content="<!--@echo description-->">
+	<title>Infinitope! | v0.1.0 | PRODUCTION</title>
+	<meta name="description" content="Infinite scroll + Isotope v2">
 	
-	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	
-	<link rel="stylesheet" href="./styles/<!-- @echo name -->.css">
-	<link rel="stylesheet" href="./styles/development.css">
 	
-	<!-- @endif -->
+	<link rel="stylesheet" href="http://mhulse.github.io/infinitope/prod/0.1.0/20140905/1/styles/it.min.css">
 	
-	<!-- @if NODE_ENV == 'PRODUCTION' -->
-	
-	<link rel="stylesheet" href="<!-- @echo production -->/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/styles/<!-- @echo name -->.min.css">
-	
-	<!-- @endif -->
 	
 </head>
 <body>

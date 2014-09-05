@@ -2,22 +2,25 @@
 	
 	width: 1600px;
 	min-width: 320px;
-	margin: 10px auto 250px;
+	margin: 50px auto 250px;
 	
-	@media all and (max-width: 1600px) {
+	@media all and (max-width: 1599px) { // A `max-width` of `1599px` plays nice with `1600px` min-width media query from PURE.
 		& { width: 1280px; }
 	}
 	
-	@media all and (max-width: 1280px) {
+	@media all and (max-width: 1279px) { // IBID.
 		& { width: 960px; }
 	}
 	
-	@media all and (max-width: 960px) {
+	@media all and (max-width: 959px) { // IBID.
 		& { width: 640px; }
 	}
 	
-	@media all and (max-width: 640px) {
-		& { width: 320px; }
+	@media all and (max-width: 639px) { // IBID.
+		& {
+			margin-top: 10px;
+			width: 320px;
+		}
 	}
 	
 }
