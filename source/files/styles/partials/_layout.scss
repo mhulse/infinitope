@@ -1,0 +1,23 @@
+#container {
+	
+	width: 1600px;
+	min-width: 320px;
+	margin: 10px auto 250px;
+	
+	@media all and (max-width: 1600px) {
+		& { width: 1280px; }
+	}
+	
+	@media all and (max-width: 1280px) {
+		& { width: 960px; }
+	}
+	
+	@media all and (max-width: 960px) {
+		& { width: 640px; }
+	}
+	
+	@media all and (max-width: 640px) {
+		& { width: 320px; }
+	}
+	
+}
