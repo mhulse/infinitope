@@ -694,7 +694,7 @@ this the same font stack that Normalize.css sets for the `body`.
   width: 100%;
 }
 
-@media all and (min-width: 568px) {
+@media all and (min-width: 640px) {
   .pure-u-sm-1,
   .pure-u-sm-1-1,
   .pure-u-sm-1-2,
@@ -880,7 +880,7 @@ this the same font stack that Normalize.css sets for the `body`.
     width: 100%;
   }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 960px) {
   .pure-u-md-1,
   .pure-u-md-1-1,
   .pure-u-md-1-2,
@@ -1066,7 +1066,7 @@ this the same font stack that Normalize.css sets for the `body`.
     width: 100%;
   }
 }
-@media all and (min-width: 928px) {
+@media all and (min-width: 1280px) {
   .pure-u-lg-1,
   .pure-u-lg-1-1,
   .pure-u-lg-1-2,
@@ -1252,7 +1252,7 @@ this the same font stack that Normalize.css sets for the `body`.
     width: 100%;
   }
 }
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1600px) {
   .pure-u-xl-1,
   .pure-u-xl-1-1,
   .pure-u-xl-1-2,
@@ -1514,14 +1514,8 @@ body {
   font-family: Arial, sans-serif;
   color: #666;
   background: #fff;
-  padding: 20px;
   min-height: 100%;
   text-rendering: optimizeLegibility;
-}
-@media all and (min-width: 768px) {
-  body {
-    padding: 50px 100px;
-  }
 }
 
 a {
@@ -1546,50 +1540,60 @@ a, a:visited {
   text-shadow: none;
 }
 
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 #container {
-  max-width: 1200px;
-  min-width: 300px;
-  margin: 0 auto;
-  margin-bottom: 250px;
+  width: 1600px;
+  min-width: 320px;
+  margin: 10px auto 250px;
+}
+@media all and (max-width: 1600px) {
+  #container {
+    width: 1280px;
+  }
+}
+@media all and (max-width: 1280px) {
+  #container {
+    width: 960px;
+  }
+}
+@media all and (max-width: 960px) {
+  #container {
+    width: 640px;
+  }
+}
+@media all and (max-width: 640px) {
+  #container {
+    width: 320px;
+  }
 }
 
 #isotope {
   *zoom: 1;
 }
-
-.isotope::before, .isotope::after {
+#isotope:before, #isotope:after {
   content: " ";
   display: table;
 }
-
-.isotope::after {
+#isotope:after {
   clear: both;
 }
-
-#isotope {
-  margin: 0 auto;
-}
-
-.isotope_item {
-  border: 1px solid black;
+#isotope .isotope_item {
   background: #ccc;
   width: 300px;
   height: 300px;
   padding: 10px;
-  margin-right: -1px;
-  margin-bottom: -1px;
+  margin: 10px;
   float: left;
+  display: inline;
 }
 
-.js #next {
+#isotope-loading {
+  display: none;
+  height: 50px;
+  background: url(../images/loader1.gif) no-repeat center top;
+  background-size: 50px;
+}
+
+.js #infscr-next {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1600,7 +1604,6 @@ a, a:visited {
   width: 1px;
 }
 
-/**** Infinite Scroll ****/
 #infscr-loading {
   font-family: arial, sans-serif;
   font-size: 12px;
@@ -1621,7 +1624,6 @@ a, a:visited {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-
 #infscr-loading img {
   width: 50px;
   height: auto;
@@ -1629,13 +1631,6 @@ a, a:visited {
   margin: 0 0 10px;
   max-width: none;
   display: block;
-}
-
-#loading {
-  display: none;
-  height: 50px;
-  background: url(../images/loader1.gif) no-repeat center top;
-  background-size: 50px;
 }
 
 h1, h2, h3, h4, h5, h6,

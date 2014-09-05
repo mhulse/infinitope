@@ -20,22 +20,13 @@ html {
 }
 
 body {
-	
 	font-size: 14px;
 	line-height: 20px;
 	font-family: $sans;
 	color: $gray6;
 	background: $milk;
-	padding: 20px;
 	min-height: 100%;
 	text-rendering: optimizeLegibility;
-	
-	@media all and (min-width: 768px) {
-		
-		& { padding: 50px 100px; }
-		
-	}
-	
 }
 
 a {

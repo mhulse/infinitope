@@ -291,10 +291,10 @@ module.exports = function(grunt) {
 					
 					mediaQueries : {
 						
-						sm : 'all and (min-width: 568px)',
-						md : 'all and (min-width: 768px)',
-						lg : 'all and (min-width: 928px)',
-						xl : 'all and (min-width: 1200px)',
+						sm : 'all and (min-width: 640px)',
+						md : 'all and (min-width: 960px)',
+						lg : 'all and (min-width: 1280px)',
+						xl : 'all and (min-width: 1600px)',
 						
 					},
 					

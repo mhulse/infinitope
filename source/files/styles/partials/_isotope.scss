@@ -1,0 +1,30 @@
+#isotope {
+	
+	*zoom: 1;
+	
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	
+	&:after { clear: both; }
+	
+	.isotope_item {
+		background: #ccc;
+		width: 300px;
+		height: 300px;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+		display: inline;
+	}
+	
+}
+
+#isotope-loading {
+	display: none;
+	height: 50px;
+	background: url(../images/loader1.gif) no-repeat center top;
+	background-size: 50px;
+}

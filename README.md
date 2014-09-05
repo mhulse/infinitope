@@ -1,6 +1,6 @@
 # Infinitope!
 
-**Infinite scroll + Isotope v2**
+**Infinite Scroll + Isotope v2**
 
 ## Demos
 
